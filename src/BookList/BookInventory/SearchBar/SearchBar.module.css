@@ -1,0 +1,23 @@
+.BookInventorySearchBar {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.SearchBarTitle {
+  font-size: 20px;
+}
+
+.SearchBar {
+  width: 25%;
+  height: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
