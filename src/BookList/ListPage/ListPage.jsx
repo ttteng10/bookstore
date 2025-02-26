@@ -8,6 +8,7 @@ export const DataContext = createContext({
   BookData: [],
 });
 
+//전체 페이지 관리
 export default function ListPage() {
   const [books, setBooks] = useState(bookData);
   const dataValue = {

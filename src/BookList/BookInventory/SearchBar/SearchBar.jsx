@@ -1,5 +1,6 @@
 import styles from "./SearchBar.module.css";
 
+//책 검색바 구현
 export default function SearchBar({ searchInput, setSearchInput }) {
   function handleSearch(e) {
     setSearchInput(e.target.value);
