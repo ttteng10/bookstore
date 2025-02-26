@@ -1,0 +1,11 @@
+.ListHeaderWrapper {
+  width: 60%;
+  height: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.ListHeaderTitle {
+  font-size: 25px;
+}
