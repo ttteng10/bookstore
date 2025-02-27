@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import styles from "./Pagination.module.css";
 import noImage from "../../../assets/images/noImage.png";
+import { DataContext } from "../../ListPage/ListPage";
 
 export default function Pagination({ books, setCurrentPage, currentPage }) {
+  const { setBooks, setPageState, setSelectBook } = useContext(DataContext);
+
   const booksPerPage = 10;
   const totalPages = Math.ceil(books.length / booksPerPage);
 
@@ -14,6 +18,32 @@ export default function Pagination({ books, setCurrentPage, currentPage }) {
   for (let i = startPage; i <= endPage; i++) {
     pageNumbers.push(i);
   }
+  function bookClick(book) {
+    setPageState("detailBook");
+    setSelectBook(book);
+  }
+
+  function minusBtn(id) {
+    setBooks((prevBooks) =>
+      prevBooks.map((book) =>
+        book.id === id ? { ...book, quantity: book.quantity - 1 } : book
+      )
+    );
+  }
+
+  function plusBtn(id) {
+    setBooks((prevBooks) =>
+      prevBooks.map((book) =>
+        book.id === id ? { ...book, quantity: book.quantity + 1 } : book
+      )
+    );
+  }
+
+  function DeleteClick(id) {
+    const newBookData = books.filter((item) => item.id !== id);
+    console.log(newBookData);
+    setBooks(newBookData);
+  }
 
   return (
     <div className={styles.BooksWrapper}>
@@ -24,8 +54,9 @@ export default function Pagination({ books, setCurrentPage, currentPage }) {
               src={item.bookImg === "" ? noImage : item.bookImg}
               alt="bookImg"
               className={styles.BookImg}
+              onClick={() => bookClick(item)}
             />
-            <div className={styles.BookInforms}>
+            <div className={styles.BookInforms} onClick={() => bookClick(item)}>
               <p className={`${styles.BookInform} ${styles.BookTitle}`}>
                 {item.title.length > 9
                   ? `${item.title.slice(0, 9)}...`
@@ -37,7 +68,9 @@ export default function Pagination({ books, setCurrentPage, currentPage }) {
                   ? `${item.author.slice(0, 9)}...`
                   : item.author}
               </p>
-              <h3 className={styles.BookInform}>{item.price}원</h3>
+              <h3 className={styles.BookInform}>
+                {item.price.toLocaleString()}원
+              </h3>
               <p className={`${styles.BookInform} ${styles.BookDiscount}`}>
                 {item.discount}% 할인
               </p>
@@ -45,15 +78,41 @@ export default function Pagination({ books, setCurrentPage, currentPage }) {
                 적립 {item.point}P
               </p>
             </div>
-            <div className={styles.BookQuantityBox}>
-              <div className={styles.QuantityBtn}>-</div>
-              <h4 className={styles.BookQuantity}>{item.quantity}</h4>
-              <div className={styles.QuantityBtn}>+</div>
+            <div className={styles.BookQuantityBoxs}>
+              <div className={styles.BookButtonBox}>
+                <div
+                  className={styles.QuantityBtn}
+                  onClick={() => minusBtn(item.id)}
+                >
+                  -
+                </div>
+                <h4 className={styles.BookQuantity}>{item.quantity}</h4>
+                <div
+                  className={styles.QuantityBtn}
+                  onClick={() => plusBtn(item.id)}
+                >
+                  +
+                </div>
+                <div
+                  className={styles.DeleteBtn}
+                  onClick={() => DeleteClick(item.id)}
+                >
+                  삭제
+                </div>
+              </div>
             </div>
           </div>
         );
       })}
       <div className={styles.PaginationBtns}>
+        <div
+          onClick={() => setCurrentPage(currentPage - 1)}
+          className={`${styles.PaginationBtn} ${
+            currentPage === 1 ? styles.Disabled : ""
+          }`}
+        >
+          ◀
+        </div>
         {startPage > 1 && (
           <>
             <div
@@ -87,6 +146,14 @@ export default function Pagination({ books, setCurrentPage, currentPage }) {
             </div>
           </>
         )}
+        <div
+          onClick={() => setCurrentPage(currentPage + 1)}
+          className={`${styles.PaginationBtn} ${
+            currentPage === totalPages ? styles.Disabled : ""
+          }`}
+        >
+          ▶
+        </div>
       </div>
     </div>
   );
