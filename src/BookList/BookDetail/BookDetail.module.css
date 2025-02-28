@@ -56,10 +56,11 @@
 
 .BookImg {
   width: 100%;
-  height: 500px;
+  /* height: 500px; */
+  height: auto;
   margin: 0;
   padding: 0;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .BookDetailInform {
