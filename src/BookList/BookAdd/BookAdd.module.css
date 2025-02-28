@@ -64,7 +64,7 @@
   height: 500px;
   margin: 0;
   padding: 0;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .InputForms {
@@ -102,4 +102,98 @@
   height: 25px;
   margin: 0;
   padding: 0 5px 0 0;
+}
+
+@media (max-width: 1000px) {
+  .BookAddWrapper {
+    width: 100%;
+    margin: 30px 0 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .BookAddWrapper {
+    width: 100%;
+    margin: 30px 0 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .HeaderBtn {
+    width: 80px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  .BookAddForm {
+    width: 100%;
+    height: 500px;
+    margin: 10px 0 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .InputImg {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    object-fit: contain;
+  }
+
+  .InputForms {
+    width: 45%;
+    height: 500px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  .InputForm {
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    /* gap: 5px; */
+  }
+
+  .InputLabel {
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    /* font-weight: 400; */
+  }
+
+  .inputStyle {
+    width: 70%;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+  }
 }

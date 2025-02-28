@@ -26,7 +26,7 @@ export default function Pagination({ books, setCurrentPage, currentPage }) {
   function minusBtn(id) {
     setBooks((prevBooks) =>
       prevBooks.map((book) =>
-        book.id === id ? { ...book, quantity: book.quantity - 1 } : book
+        book.id === id ? { ...book, quantity: +book.quantity - 1 } : book
       )
     );
   }
@@ -34,7 +34,7 @@ export default function Pagination({ books, setCurrentPage, currentPage }) {
   function plusBtn(id) {
     setBooks((prevBooks) =>
       prevBooks.map((book) =>
-        book.id === id ? { ...book, quantity: book.quantity + 1 } : book
+        book.id === id ? { ...book, quantity: +book.quantity + 1 } : book
       )
     );
   }
