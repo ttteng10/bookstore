@@ -1,12 +1,33 @@
-<<<<<<< HEAD
-# bookstore
-=======
-# React + Vite
+# 📘 서점 관리 웹 앱
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Vite + React 기반 프론트엔드 프로젝트입니다.  
+다양한 OS(Windows, Mac, Linux)에서 실행할 수 있습니다.
 
-Currently, two official plugins are available:
+## 📌 프로젝트 실행 방법
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
->>>>>>> d6411a9 (Initial commit)
+### 1️⃣ Node.js 설치
+
+프로젝트를 실행하려면 **Node.js**가 필요합니다.  
+아래 링크에서 OS에 맞는 Node.js를 설치하세요.
+
+🔗 [Node.js 다운로드](https://nodejs.org/)
+
+> ✅ **권장 버전:** LTS (Long Term Support)
+
+### 2️⃣ 프로젝트 클론 및 실행
+
+터미널(CLI)에서 아래 명령어를 입력하세요.
+
+```sh
+# 1️⃣ GitHub에서 프로젝트 클론
+git clone https://github.com/ttteng10/bookstore.git
+
+# 2️⃣ 프로젝트 폴더로 이동
+cd bookstore
+
+# 3️⃣ 패키지 설치 (운영체제 관계없이 실행)
+npm install
+
+# 4️⃣ 개발 서버 실행 (운영체제 관계없이 실행)
+npm run dev
+```
