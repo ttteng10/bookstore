@@ -4,10 +4,21 @@ import { DataContext } from "../ListPage/ListPage";
 import noImage from "../../assets/images/noImage.png";
 
 export default function BookDetail() {
-  const { BookData, setBooks, selectBook, setSelectBook, setPageState } =
-    useContext(DataContext);
+  const {
+    BookData,
+    setBooks,
+    selectBook,
+    setSelectBook,
+    setPageState,
+    currentPage,
+    setCurrentPage,
+  } = useContext(DataContext);
   const [editState, setEditState] = useState(false);
   const [bookQuantity, setBookQuantity] = useState(selectBook.quantity);
+
+  function backBtn() {
+    setPageState("bookList");
+  }
 
   function editClick() {
     if (editState) {
@@ -35,10 +46,7 @@ export default function BookDetail() {
   return (
     <div className={styles.BookDetailWrapper}>
       <div className={styles.BookDetailHeader}>
-        <div
-          className={styles.HeaderBtn}
-          onClick={() => setPageState("bookList")}
-        >
+        <div className={styles.HeaderBtn} onClick={() => backBtn()}>
           뒤로
         </div>
         <div

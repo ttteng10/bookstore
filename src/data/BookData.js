@@ -1,3 +1,24 @@
+import book1 from "../assets/images/boy.png";
+import book2 from "../assets/images/1984.png";
+import book3 from "../assets/images/alice.png";
+import book4 from "../assets/images/heidi.png";
+import book5 from "../assets/images/vegetarian.png";
+import book6 from "../assets/images/book6.png";
+import book7 from "../assets/images/book7.png";
+import book8 from "../assets/images/book8.png";
+import book9 from "../assets/images/book9.png";
+import book10 from "../assets/images/book10.png";
+import book11 from "../assets/images/book11.png";
+import book12 from "../assets/images/book12.png";
+import book13 from "../assets/images/book13.png";
+import book14 from "../assets/images/book14.png";
+import book15 from "../assets/images/book15.png";
+import book16 from "../assets/images/book16.png";
+import book17 from "../assets/images/book17.png";
+import book18 from "../assets/images/book18.png";
+import book19 from "../assets/images/book19.png";
+import book20 from "../assets/images/book20.png";
+
 export const bookData = [
   {
     id: 1,
@@ -8,7 +29,7 @@ export const bookData = [
     originPrice: 15000,
     discount: 10,
     point: 5,
-    bookImg: "",
+    bookImg: book1,
   },
   {
     id: 2,
@@ -19,7 +40,7 @@ export const bookData = [
     originPrice: 14000,
     discount: 15,
     point: 4,
-    bookImg: "",
+    bookImg: book2,
   },
   {
     id: 3,
@@ -30,7 +51,7 @@ export const bookData = [
     originPrice: 10000,
     discount: 20,
     point: 3,
-    bookImg: "",
+    bookImg: book3,
   },
   {
     id: 4,
@@ -41,7 +62,7 @@ export const bookData = [
     originPrice: 12000,
     discount: 10,
     point: 3,
-    bookImg: "",
+    bookImg: book4,
   },
   {
     id: 5,
@@ -52,7 +73,7 @@ export const bookData = [
     originPrice: 12000,
     discount: 12,
     point: 4,
-    bookImg: "",
+    bookImg: book5,
   },
   {
     id: 6,
@@ -63,7 +84,7 @@ export const bookData = [
     originPrice: 15000,
     discount: 10,
     point: 5,
-    bookImg: "",
+    bookImg: book6,
   },
   {
     id: 7,
@@ -74,7 +95,7 @@ export const bookData = [
     originPrice: 13000,
     discount: 25,
     point: 3,
-    bookImg: "",
+    bookImg: book7,
   },
   {
     id: 8,
@@ -85,7 +106,7 @@ export const bookData = [
     originPrice: 8500,
     discount: 18,
     point: 2,
-    bookImg: "",
+    bookImg: book8,
   },
   {
     id: 9,
@@ -96,7 +117,7 @@ export const bookData = [
     originPrice: 17000,
     discount: 15,
     point: 5,
-    bookImg: "",
+    bookImg: book9,
   },
   {
     id: 10,
@@ -107,7 +128,7 @@ export const bookData = [
     originPrice: 15000,
     discount: 10,
     point: 5,
-    bookImg: "",
+    bookImg: book10,
   },
   {
     id: 11,
@@ -118,7 +139,7 @@ export const bookData = [
     originPrice: 15000,
     discount: 13,
     point: 4,
-    bookImg: "",
+    bookImg: book11,
   },
   {
     id: 12,
@@ -129,7 +150,7 @@ export const bookData = [
     originPrice: 13000,
     discount: 12,
     point: 4,
-    bookImg: "",
+    bookImg: book12,
   },
   {
     id: 13,
@@ -140,7 +161,7 @@ export const bookData = [
     originPrice: 20000,
     discount: 8,
     point: 6,
-    bookImg: "",
+    bookImg: book13,
   },
   {
     id: 14,
@@ -151,7 +172,7 @@ export const bookData = [
     originPrice: 16000,
     discount: 15,
     point: 4,
-    bookImg: "",
+    bookImg: book14,
   },
   {
     id: 15,
@@ -162,7 +183,7 @@ export const bookData = [
     originPrice: 15000,
     discount: 20,
     point: 5,
-    bookImg: "",
+    bookImg: book15,
   },
   {
     id: 16,
@@ -173,7 +194,7 @@ export const bookData = [
     originPrice: 10500,
     discount: 10,
     point: 3,
-    bookImg: "",
+    bookImg: book16,
   },
   {
     id: 17,
@@ -184,7 +205,7 @@ export const bookData = [
     originPrice: 13000,
     discount: 8,
     point: 4,
-    bookImg: "",
+    bookImg: book17,
   },
   {
     id: 18,
@@ -195,7 +216,7 @@ export const bookData = [
     originPrice: 21000,
     discount: 12,
     point: 5,
-    bookImg: "",
+    bookImg: book18,
   },
   {
     id: 19,
@@ -206,7 +227,7 @@ export const bookData = [
     originPrice: 9000,
     discount: 8,
     point: 3,
-    bookImg: "",
+    bookImg: book19,
   },
   {
     id: 20,
@@ -217,7 +238,7 @@ export const bookData = [
     originPrice: 18000,
     discount: 17,
     point: 6,
-    bookImg: "",
+    bookImg: book20,
   },
   {
     id: 21,

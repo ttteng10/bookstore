@@ -6,10 +6,10 @@ import Pagination from "./Pagination/Pagination";
 
 // 책 목록 페이지
 export default function BookInventory() {
-  const { BookData } = useContext(DataContext);
+  const { BookData, currentPage, setCurrentPage } = useContext(DataContext);
   const [searchInput, setSearchInput] = useState("");
   const [books, setBooks] = useState(BookData);
-  const [currentPage, setCurrentPage] = useState(1);
+  // const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     const newBooks = BookData.filter(
@@ -17,7 +17,10 @@ export default function BookInventory() {
         item.title.includes(searchInput) || item.author.includes(searchInput)
     );
     setBooks(newBooks);
-    setCurrentPage(1);
+    if (currentPage > 1 && newBooks.length < books.length) {
+      setCurrentPage(1);
+    }
+    // setCurrentPage(1);
   }, [searchInput, BookData]);
 
   return (

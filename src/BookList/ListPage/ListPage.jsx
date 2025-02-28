@@ -12,6 +12,8 @@ export const DataContext = createContext({
   setPageState: () => {},
   selectBook: {},
   setSelectBook: () => {},
+  currentPage: Number,
+  setCurrentPage: () => {},
 });
 
 //전체 페이지 관리
@@ -19,12 +21,15 @@ export default function ListPage() {
   const [books, setBooks] = useState(bookData);
   const [pageState, setPageState] = useState("bookList");
   const [selectBook, setSelectBook] = useState();
+  const [currentPage, setCurrentPage] = useState(1);
   const dataValue = {
     BookData: books,
     setBooks: setBooks,
     setPageState: setPageState,
     selectBook: selectBook,
     setSelectBook: setSelectBook,
+    currentPage: currentPage,
+    setCurrentPage: setCurrentPage,
   };
   return (
     <DataContext.Provider value={dataValue}>
