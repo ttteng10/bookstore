@@ -1,10 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import styles from "./Pagination.module.css";
 import noImage from "../../../assets/images/noImage.png";
 import { DataContext } from "../../ListPage/ListPage";
+import DeleteDialog from "../../DeleteDialog/DeleteDialog";
 
 export default function Pagination({ books, setCurrentPage, currentPage }) {
   const { setBooks, setPageState, setSelectBook } = useContext(DataContext);
+  const [dialogState, setDialogState] = useState(false);
+  const [newBooks, setNewBooks] = useState();
 
   const booksPerPage = 10;
   const totalPages = Math.ceil(books.length / booksPerPage);
@@ -40,13 +43,22 @@ export default function Pagination({ books, setCurrentPage, currentPage }) {
   }
 
   function DeleteClick(id) {
+    setDialogState(true);
     const newBookData = books.filter((item) => item.id !== id);
-    console.log(newBookData);
-    setBooks(newBookData);
+    setNewBooks(newBookData);
+    // setBooks(newBookData);
   }
 
   return (
     <div className={styles.BooksWrapper}>
+      {dialogState && (
+        <DeleteDialog
+          setDialogState={setDialogState}
+          newBooks={newBooks}
+          setBooks={setBooks}
+          setPageState={setPageState}
+        />
+      )}
       {currentBooks.map((item) => {
         return (
           <div className={styles.BookPreView} key={item.id}>

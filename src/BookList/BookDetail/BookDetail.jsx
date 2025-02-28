@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import styles from "./BookDetail.module.css";
 import { DataContext } from "../ListPage/ListPage";
 import noImage from "../../assets/images/noImage.png";
+import DeleteDialog from "../DeleteDialog/DeleteDialog";
 
 export default function BookDetail() {
   const {
@@ -15,6 +16,8 @@ export default function BookDetail() {
   } = useContext(DataContext);
   const [editState, setEditState] = useState(false);
   const [bookQuantity, setBookQuantity] = useState(selectBook.quantity);
+  const [dialogState, setDialogState] = useState(false);
+  const [newBooks, setNewBooks] = useState();
 
   function backBtn() {
     setPageState("bookList");
@@ -38,13 +41,21 @@ export default function BookDetail() {
   }
 
   function deleteClick(id) {
+    setDialogState(true);
     const newBookData = BookData.filter((item) => item.id !== id);
-    setBooks(newBookData);
-    setPageState("bookList");
+    setNewBooks(newBookData);
   }
 
   return (
     <div className={styles.BookDetailWrapper}>
+      {dialogState && (
+        <DeleteDialog
+          setDialogState={setDialogState}
+          newBooks={newBooks}
+          setBooks={setBooks}
+          setPageState={setPageState}
+        />
+      )}
       <div className={styles.BookDetailHeader}>
         <div className={styles.HeaderBtn} onClick={() => backBtn()}>
           뒤로

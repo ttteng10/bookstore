@@ -84,6 +84,20 @@ export default function BookAdd() {
     }
   };
 
+  const handleTextChange = (setter) => (e) => {
+    const value = e.target.value;
+    if (/^[\p{Script=Hangul}a-zA-Z\s]*$/u.test(value)) {
+      setter(value);
+    }
+  };
+
+  const handleNumberChange = (setter) => (e) => {
+    const value = e.target.value;
+    if (/^\d*$/.test(value)) {
+      setter(value);
+    }
+  };
+
   return (
     <div className={styles.BookAddWrapper}>
       <div className={styles.BookAddHeader}>
@@ -123,7 +137,7 @@ export default function BookAdd() {
               type="text"
               ref={titleRef}
               value={title}
-              onChange={(e) => setTitle(e.target.value)}
+              onChange={handleTextChange(setTitle)}
               className={styles.inputStyle}
             />
           </div>
@@ -133,7 +147,7 @@ export default function BookAdd() {
               type="text"
               ref={authorRef}
               value={author}
-              onChange={(e) => setAuthor(e.target.value)}
+              onChange={handleTextChange(setAuthor)}
               className={styles.inputStyle}
             />
           </div>
@@ -143,7 +157,7 @@ export default function BookAdd() {
               type="number"
               ref={quantityRef}
               value={quantity}
-              onChange={(e) => setQuantity(e.target.value)}
+              onChange={handleNumberChange(setQuantity)}
               className={styles.inputStyle}
             />
           </div>
@@ -153,7 +167,7 @@ export default function BookAdd() {
               type="number"
               ref={discountRef}
               value={discount}
-              onChange={(e) => setDiscount(e.target.value)}
+              onChange={handleNumberChange(setDiscount)}
               className={styles.inputStyle}
             />
           </div>
@@ -163,7 +177,7 @@ export default function BookAdd() {
               type="number"
               ref={priceRef}
               value={price}
-              onChange={(e) => setPrice(e.target.value)}
+              onChange={handleNumberChange(setPrice)}
               className={styles.inputStyle}
             />
           </div>
@@ -173,7 +187,7 @@ export default function BookAdd() {
               type="number"
               ref={originPriceRef}
               value={originPrice}
-              onChange={(e) => setOriginPrice(e.target.value)}
+              onChange={handleNumberChange(setOriginPrice)}
               className={styles.inputStyle}
             />
           </div>
@@ -183,7 +197,7 @@ export default function BookAdd() {
               type="number"
               ref={pointRef}
               value={point}
-              onChange={(e) => setPoint(e.target.value)}
+              onChange={handleNumberChange(setPoint)}
               className={styles.inputStyle}
             />
           </div>
